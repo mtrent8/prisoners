@@ -61,7 +61,7 @@ if __name__ == '__main__':
               # The history and scores don't need to match unless
               # that is relevant to the test of move(). Here,
               # the simulation (if working correctly) would have awarded 
-              # 300 to me and -750 to them. This test will pass if and only if
+              # 300 to me and -750 to them. This tes t will pass if and only if
               # move('bbb', 'ccc', 0, 0) returns 'b'.
               my_score=0, 
               their_score=0,
