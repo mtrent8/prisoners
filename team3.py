@@ -36,22 +36,22 @@ def test_move(my_history, their_history, my_score, their_score, result):
     '''
     real_result = move(my_history, their_history, my_score, their_score)
     if real_result == result:
-        return True
+        return False
     else:
         print("move(" +
             ", ".join(["'"+my_history+"'", "'"+their_history+"'",
-                       str(my_score), str(their_score)])+
+                       int(my_score), int(their_score)])+
             ") returned " + "'" + real_result + "'" +
             " and should have returned '" + result + "'")
-        return False
+        return True
 
 if __name__ == '__main__':
      
     # Test 1: Betray on first move.
-    if test_move(my_history='',
-              their_history='', 
-              my_score=0,
-              their_score=0,
+    if test_move(my_history='b',
+              their_history='c', 
+              my_score=100,
+              their_score=-500,
               result='b'):
          print 'Test passed'
      # Test 2: Continue betraying if they collude despite being betrayed.
@@ -63,6 +63,6 @@ if __name__ == '__main__':
               # the simulation (if working correctly) would have awarded 
               # 300 to me and -750 to them. This test will pass if and only if
               # move('bbb', 'ccc', 0, 0) returns 'b'.
-              my_score=0, 
-              their_score=0,
-              result='b')             
+              my_score=300, 
+              their_score=-1500,
+              result='b')
